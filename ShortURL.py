@@ -43,8 +43,6 @@ class ShortURL:
             if (pos[i] - total) / pos[i] > shift_possibility:
                 length = i + 2
                 break
-        if 5 < length <= 0:
-            raise IndexError("Length must be larger than 0")
         result = ""
         for i in range(length):
             result += chr(random.randint(ord('a'), ord('z'))) if random.randint(0, 1) else str(random.randint(0, 9))
