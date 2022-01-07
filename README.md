@@ -1,25 +1,21 @@
 # ShortenURL Model
-The model layer class for shorten url service 
+The model layer class for shorten URL service 
 # Usage
 Complete the `init.py` to meet your demand, and use the `ShoternURL` class as below
 ```python
 import ShortURL
 func = ShortURL.ShortURL()
 
-# For first time use, initialize the database
-func.init()
-
-# add link, return shorted link
-result = func.add("https://baidu.com")
-print(result)
+# add link
+result = func.add("https://sougo.com")	# 1000 items in 1.7s safe mode
 
 # check total length
 print(func.len())
 
-# check from original link / short link, automatically detect input type
-result = func.get("https://baidu.com")
-print(result)
+# check from original link / short link
+result = func.get("https://sougo.com")
 
-# don't forget to close the session at the end
-func.close_session()
+# don't forget to close the session
+func.close()
 ```
+

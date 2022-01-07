@@ -3,34 +3,32 @@
  @COPYRIGHT: TwinIsland
  @FILENAME: sample.py
  @DESCRIPTION: Test ShortURL class
- @DATE: 6/1/2002
+ @DATE: 6/1/2021
 """
 import ShortURL
 
 func = ShortURL.ShortURL()
 
-# For first time use, init the database
-# func.init()
-
 # add link
-result1 = func.add("https://baidu.com")
-result2 = func.add("https://erdao.com")
-print(result1)
-print(result2)
+result = func.add("https://sougo.com")
+print(result)
 
 # check total length
-print(func.len())
+print(str(func.len()) + "\n")
 
 # add duplicate
-result1 = func.add("https://baidu.com")
-print(result1)
-print(func.len())
+result = func.add("https://sougo.com")
+print(result + "\n")
 
 # check from original link / short link
-result1 = func.get("https://baidu.com")
-result2 = func.get("https://notexist.com")
-print(result1)
-print(result2)
+result = func.get("https://sougo.com")
+result2 = func.get("https://NOTEXIST.com")
+print(result)
+print(result2 + "\n")
 
-# do not forget to close the session
-func.close_session()
+# check illegal url
+print(func.add("baidu.com"))
+print(func.get("notURL"))
+
+# don't forget to close the session
+func.close()
