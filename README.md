@@ -1,7 +1,7 @@
 # ShortenURL Model
 The model layer class for shorten URL service 
 # Usage
-Complete the `init.py` to meet your demand, and use the `ShoternURL` class as below
+Complete the `config.json` to meet your demand, and use the `ShoternURL` class as below
 ```python
 import ShortURL
 func = ShortURL.ShortURL()
