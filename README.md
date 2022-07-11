@@ -46,7 +46,7 @@ func.close()
    ],
    "baseURL":"base.com",
    "sqliteAddress":"./shortLink.db",
-   "shift_possibility": 0.9,
+   "shift_possibility": 0.6,
    "min_length": 4,
    "max_length": -1,
    "support_url_pattern":"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
@@ -55,6 +55,9 @@ func.close()
 
 # Status Code
 `NONE`: nothing find
+
 `ILLEGAL`: input is illegal
+
 `ERROR`: service error, maybe caused by db closed
+
 `FULL`: db excess maximum amount
