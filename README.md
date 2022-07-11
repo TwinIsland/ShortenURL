@@ -25,12 +25,18 @@ func.close()
 ```
 
 # Config
-`blacklist`: avoid adding this url
+`blacklist`: ban adding this url
+
 `baseURL`: short url service base url
+
 `sqliteAddress`: sqlite address
+
 `shift_possibility`: range from (0, 1), the larger, the better effect, but may lower the efficiency with mass data
+
 `min_length`: min length for shorten address
+
 `max_length`: max length for shorten address, set as `-1` for ultimate
+
 `support_url_pattern`: regex validation for input url
 
 ```json
