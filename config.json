@@ -1,12 +1,11 @@
 {
-  "config": {
-    "blacklist": [
-      "baidu.com"
-    ],
-    "baseURL": "https://erdao.me/",
-    "sqliteAddress": "./shortLink.db",
-    "shift_possibility": 0.5,
-    "support_url_pattern": "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
-  },
-  "count": 0
+   "blacklist":[
+      "sample.com"
+   ],
+   "baseURL":"base.com",
+   "sqliteAddress":"./shortLink.db",
+   "shift_possibility": 0.9,
+   "min_length": 4,
+   "max_length": -1,
+   "support_url_pattern":"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
 }
