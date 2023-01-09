@@ -57,7 +57,7 @@ class JumpHandler(tornado.web.RequestHandler, ABC):
             self.redirect(config['link'])
         else:
             print("redirect ok, try {}".format(path))
-            self.redirect(origin)
+            self.redirect(config['link'] + ':' + config['proxy'])
 
 
 if __name__ == "__main__":
