@@ -54,10 +54,10 @@ class JumpHandler(tornado.web.RequestHandler, ABC):
         origin = self.shortUrl.get(self.shortUrl.get_base_url() + '/' + path)
         if origin == 'ERROR' or origin == "ILLEGAL" or origin == "NONE":
             print("redirect fail, try {}".format(self.shortUrl.get_base_url() + '/' + path))
-            self.redirect(config['link'])
+            self.redirect(config['link'] + ':' + config['proxy'])
         else:
             print("redirect ok, try {}".format(path))
-            self.redirect(config['link'] + ':' + config['proxy'])
+            self.redirect(origin)
 
 
 if __name__ == "__main__":
