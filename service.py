@@ -22,7 +22,7 @@ def index_page():
             return "link illegal!"
 
     shortUrl = ShortURL.ShortURL()
-    put_markdown("# [{}]({})".format(config['title'], config['link'] + ':' + config['proxy']))
+    put_markdown("# [{}]({})".format(config['title'], config['link']))
     server_status = shortUrl.status()
     put_table([
         ["Total", "DB", "Connection", "Slot"],
@@ -54,17 +54,21 @@ class JumpHandler(tornado.web.RequestHandler, ABC):
         origin = self.shortUrl.get(self.shortUrl.get_base_url() + '/' + path)
         if origin == 'ERROR' or origin == "ILLEGAL" or origin == "NONE":
             print("redirect fail, try {}".format(self.shortUrl.get_base_url() + '/' + path))
-            self.redirect(config['link'] + ':' + config['proxy'])
+            self.redirect(config['link'])
         else:
             print("redirect ok, try {}".format(path))
             self.redirect(origin)
 
 
-if __name__ == "__main__":
+def main():
     application = tornado.web.Application([
         (r"/", webio_handler(index_page)),
         (r"/([^/]+)", JumpHandler)
     ])
-    application.listen(port=int(config['proxy']), address='localhost')
-    print("short link application start at: ", config['link'] + ':' + config['proxy'])
+    application.listen(port=int(config['proxy']))
+    print("short link application start at: localhost:" + config['proxy'])
     tornado.ioloop.IOLoop.current().start()
+
+
+if __name__ == "__main__":
+    main()
