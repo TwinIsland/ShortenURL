@@ -1,4 +1,4 @@
-# ShortenURL Model
+# ShortenURL
 A simple link shorten service, database powered by SQLite
 
 ![img.png](doc/img.png)
