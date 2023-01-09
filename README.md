@@ -61,3 +61,9 @@ func.close()
 `ERROR`: service error, maybe caused by db closed
 
 `FULL`: db excess maximum amount
+
+# WebUI
+
+config `service.ini` and run `service.py`
+
+![](doc/preview.png)

@@ -1,11 +1,10 @@
 {
    "blacklist":[
-      "sample.com"
    ],
-   "baseURL":"base.com",
+   "baseURL":"http://localhost:1145",
    "sqliteAddress":"./shortLink.db",
    "shift_possibility": 0.9,
-   "min_length": 4,
+   "min_length": 6,
    "max_length": -1,
    "support_url_pattern":"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
 }
